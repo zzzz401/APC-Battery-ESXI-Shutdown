@@ -104,14 +104,14 @@ case "$1" in
 	echo "Remaining battery runtime below limit on UPS ${2}. Doing shutdown." | ${WALL}
     ;;
     doreboot)
-	echo "UPS ${2} initiating Reboot Sequence" | ${WALL}
-	${SHUTDOWN} -r now "apcupsd UPS ${2} initiated reboot"
+	#echo "UPS ${2} initiating Reboot Sequence" | ${WALL}
+	#${SHUTDOWN} -r now "apcupsd UPS ${2} initiated reboot"
     ;;
     doshutdown)
-        #echo "UPS ${2} initiated Shutdown Sequence" | ${WALL}
-        #${SHUTDOWN} -h now "apcupsd UPS ${2} initiated shutdown"
-        echo "Shutting Down Network Services and Sending Notification" | ${WALL}
-        bash /home/pi/APC-Battery-ESXI-Shutdown/PowerFailure.sh
+    #echo "UPS ${2} initiated Shutdown Sequence" | ${WALL}
+    #${SHUTDOWN} -h now "apcupsd UPS ${2} initiated shutdown"
+    echo "Shutting Down Network Services and Sending Notification" | ${WALL}
+    sh /home/pi/APC-Battery-ESXI-Shutdown/PowerFailure.sh
     ;;
     annoyme)
 	echo "Power problems with UPS ${2}. Please logoff." | ${WALL}

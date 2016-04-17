@@ -29,4 +29,5 @@ while true ; do
 	sleep 1
 done
 echo "Now we suspend the Host..."
-vim-cmd hostsvc/standby_mode_enter
+halt
+exit 0
